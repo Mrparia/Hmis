@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIMS Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#0D47A1', // A deep, professional blue
+                light: '#1976D2',
+                dark: '#0A3882',
+              },
+              secondary: {
+                DEFAULT: '#42A5F5', // A lighter, friendly blue
+              },
+              accent: {
+                DEFAULT: '#26C6DA', // A teal/cyan for highlights
+              },
+              background: '#F4F7FC',
+              surface: '#FFFFFF',
+              'on-surface': '#212121',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Styles for placing the PDF-source content off-screen */
+      #print-container {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 210mm; /* A4 width */
+        background: white; /* Ensure a white background for PDF */
+      }
+    </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai-sdk@^0.18.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-background">
+    <div id="root"></div>
+    <div id="print-container"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
